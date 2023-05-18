@@ -2,14 +2,16 @@ import { Button, Stack, TextInput } from '@mantine/core'
 import { useCallback, useState } from 'react'
 import { useWeb3 } from '@/components/Web3Context'
 import { useRouter } from 'next/router';
-import { StartTraining } from '@feltlabs/react';
+import { AlgorithmConfig, StartTraining } from '@feltlabs/react';
 import Head from 'next/head';
 
-const alg = {
+const alg: AlgorithmConfig = {
   id: "demo-test",
   name: "Test algorithm for demo client",
   assets: {
       training: "",
+      aggregation: "did:op:...",
+      emptyDataset: "did:op:...",
   },
   hasParameters: false,
 };
@@ -72,7 +74,7 @@ export default function Home() {
           web3={web3}
           onClose={() => setStartTraining(false)}
           onDone={() => router.push('/jobs')}
-          isSoloTraining={true}
+          isSoloTraining={false}
           selectedChainId={80001}
         />
       )}

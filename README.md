@@ -3,6 +3,8 @@ Demo web application to demonstrate how to use FELT npm package to integrate fed
 
 ## Getting Started
 
+create `.env` file from `.env.example` and fill in your Infura project id
+
 ```bash
 yarn install   # install dependencies
 yarn dev       # start the server
