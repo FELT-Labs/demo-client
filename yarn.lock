@@ -528,10 +528,10 @@
     "@ethersproject/properties" "^5.7.0"
     "@ethersproject/strings" "^5.7.0"
 
-"@feltlabs/react@^0.0.12":
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/@feltlabs/react/-/react-0.0.12.tgz#951c9c566b960442c6bf119a4ee9fffb60d1f27a"
-  integrity sha512-swx3ZJGk6Ei8hKUUn3O7Xab9WIgJIyMm3DyurLsz+iazJk9PVYE3nR7UOz+UL0OSLlkOgdafLLxc5IN+ReZr2A==
+"@feltlabs/react@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@feltlabs/react/-/react-0.1.0.tgz#bacc7e26f010862e09c8e30a3ec9020453f7262c"
+  integrity sha512-X8obKJXQJaaPjtBwOIHOVBf30RtyD8haontGkNeLyCk5G27C6hcg4aBZSWJFdtC/Q7jtQRw47AKrPxFPRERbMw==
   dependencies:
     "@emotion/react" "^11.10.6"
     "@emotion/server" "^11.10.0"
