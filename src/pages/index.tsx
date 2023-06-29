@@ -11,7 +11,7 @@ const alg: AlgorithmConfig = {
   assets: {
       training: "",
       aggregation: "did:op:...",
-      emptyDataset: "did:op:...",
+      emptyDataset: "did:op:20bf68f480e17aff3e6947792e75b615908a46394ba33c8cfb94587a0a8d2c29", // place where aggregation will happen
   },
   hasParameters: false,
 };
@@ -22,7 +22,8 @@ export default function Home() {
 
   const [dataset1Did, setDataset1Did] = useState('did:op:3632e8584837f2eac04d85466c0cebd8b8cb2673b472a82a310175da9730042a')
   const [dataset2Did, setDataset2Did] = useState('did:op:cad4a81c9a8e1c1071ccf3e9dea6f8f42d58e100fa3ddf2950c8f0da9e0dda46')
-  const [algorithmDid, setAlgorithmDid] = useState('did:op:526477b366e69610cf1b9c77c778bbc75d4b448892ab681dea972a0f3db99669')
+  const [localTrainingDid, setLocalTrainingDid] = useState('did:op:526477b366e69610cf1b9c77c778bbc75d4b448892ab681dea972a0f3db99669')
+  const [aggregationDid, setAggregationDid] = useState('did:op:dcefb784c302094251ae1bc19d898eb584bd7be20a623bab078d4df0283e6c79')
   const [startTraining, setStartTraining] = useState(false)
 
   const onClick = useCallback(() => {
@@ -56,10 +57,18 @@ export default function Home() {
 
         <TextInput
           w={600}
-          value={algorithmDid}
-          label="Algorithm DID"
+          value={localTrainingDid}
+          label="Local Training Algorithm DID"
           withAsterisk
-          onChange={(event) => setAlgorithmDid(event.currentTarget.value)}
+          onChange={(event) => setLocalTrainingDid(event.currentTarget.value)}
+        />
+
+        <TextInput
+          w={600}
+          value={aggregationDid}
+          label="Aggregation Algorithm DID"
+          withAsterisk
+          onChange={(event) => setAggregationDid(event.currentTarget.value)}
         />
 
         <Button onClick={onClick}>Submit</Button>
@@ -69,12 +78,12 @@ export default function Home() {
         <StartTraining
           name="test demo client"
           datasets={[dataset1Did, dataset2Did]}
-          algorithm={{...alg, assets: { ...alg.assets, training: algorithmDid}}}
+          algorithm={{...alg, assets: { ...alg.assets, training: localTrainingDid, aggregation: aggregationDid}}}
           algoCustomData={{}}
           web3={web3}
           onClose={() => setStartTraining(false)}
           onDone={() => router.push('/jobs')}
-          isSoloTraining={false}
+          type="multi"
           selectedChainId={80001}
         />
       )}
