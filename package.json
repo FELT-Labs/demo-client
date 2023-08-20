@@ -1,18 +1,11 @@
 {
   "name": "demo-client",
-  "version": "0.1.0",
-  "private": false,
-  "license": "GPL-3.0",
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
+  "version": "0.2.0",
+  "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/server": "^11.11.0",
-    "@feltlabs/react": "^0.1.2",
+    "@feltlabs/react": "*",
     "@mantine/core": "^6.0.11",
     "@mantine/hooks": "^6.0.11",
     "@mantine/next": "^6.0.11",
@@ -24,7 +17,13 @@
     "next": "13.4.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.0.4",
-    "web3": "^1.10.0"
+    "typescript": "5.0.4"
+  },
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "eslint src/**/*.ts*",
+    "lint:fix": "eslint --fix src/**/*.ts*"
   }
 }

@@ -1,6 +1,5 @@
 import { Button, Stack, TextInput } from '@mantine/core'
 import { useCallback, useState } from 'react'
-import { useWeb3 } from '@/components/Web3Context'
 import { useRouter } from 'next/router';
 import { AlgorithmConfig, StartTraining } from '@feltlabs/react';
 import Head from 'next/head';
@@ -17,7 +16,6 @@ const alg: AlgorithmConfig = {
 };
 
 export default function Home() {
-  const { web3 } = useWeb3();
   const router = useRouter();
 
   const [dataset1Did, setDataset1Did] = useState('did:op:3632e8584837f2eac04d85466c0cebd8b8cb2673b472a82a310175da9730042a')
@@ -80,7 +78,6 @@ export default function Home() {
           datasets={[dataset1Did, dataset2Did]}
           algorithm={{...alg, assets: { ...alg.assets, training: localTrainingDid, aggregation: aggregationDid}}}
           algoCustomData={{}}
-          web3={web3}
           onClose={() => setStartTraining(false)}
           onDone={() => router.push('/jobs')}
           type="multi"

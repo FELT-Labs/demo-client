@@ -1,5 +1,4 @@
 import { Container, Flex, Group, Text } from '@mantine/core';
-import { ConnectWallet } from './ConnectWallet';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -23,8 +22,6 @@ export const Header = () => {
             Jobs
           </Link>
         </Flex>
-          
-        <ConnectWallet />
       </Group>
     </Container>
   );

@@ -3,7 +3,7 @@ Demo web application to demonstrate how to use FELT npm package to integrate fed
 
 ## Getting Started
 
-create `.env` file from `.env.example`. Fill in your Infura project id and your FELT API key.
+create `.env` file from `.env.example`. Fill in your Infura project id, WalletConnet project id and your FELT API key.
 
 ```bash
 yarn install   # install dependencies
