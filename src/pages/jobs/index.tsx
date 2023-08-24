@@ -4,11 +4,10 @@ import Head from 'next/head';
 import { useCallback } from 'react';
 
 const LaunchedJobs: NextPage = () => {
-
   const finalResultCallback = useCallback(async (finalResultUrl: string) => {
     fetch(finalResultUrl)
-      .then(res => res.blob())
-      .then(blob => {
+      .then((res) => res.blob())
+      .then((blob) => {
         const file = window.URL.createObjectURL(blob);
         window.location.assign(file);
       });
